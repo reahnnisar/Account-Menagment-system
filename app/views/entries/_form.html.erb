@@ -1,0 +1,50 @@
+
+<%= form_with model: @entry do |form| %>
+
+  <div class="d-flex flex-column align-items-center justify-content-center gap-4">
+  <div class="w-100">
+      <div class="input-group mb-3">
+        <%= form.label :amount, class: " input-group-text fs-6  fw-medium" %>
+        <%= form.number_field :amount, value: @entry.amount.abs, class: "form-control", min: 1 %>
+      </div>
+  </div>
+  
+  <div class="w-100">
+       <div class="d-flex align-items-center justify-content-between mb-3">
+            <span class="input-group-text fs-6 fw-medium">Transaction:</span>
+
+
+           <div class="d-flex flex-column align-items-center justify-content-center me-5">   
+          <div class="form-check form-check-inline">
+         <%= radio_button_tag 'direction', 'in', @entry.in? ? {'checked': 'checked'} : {}, class: "form-check-input" %>
+         <%= label_tag 'direction_in', 'Taken', class: "form-check-label" %>
+        </div>
+
+
+        <div class="form-check form-check-inline">
+        <%= radio_button_tag 'direction', 'out', @entry.out? ? {'checked': 'checked'} : {}, class: "form-check-input" %>
+        <%= label_tag 'direction_out', 'Given', class: "form-check-label" %>
+   </div>  
+  </div> 
+  </div>
+   </div>
+  
+    <div class="w-100">
+       <div class="input-group mb-3">
+          <%= form.label :entry_date, class: "input-group-text fs-6 fw-medium" %>
+          <%= form.date_field :entry_date, class: "form-control", value: Date.today.strftime('%Y-%m-%d') %>
+       </div>
+    </div>
+         
+    <div class="w-100">
+      <div class="input-group mb-3">
+    <%= form.label :description, class:" input-group-text fs-6 fw-medium" %>
+    <%= form.text_field :description,  class:"form-control" %> 
+    </div>
+    </div>
+    
+     <div class="w-100 text-center mt-3">
+      <%= form.submit "Submit" , class: "px-4 py-2 me-3 btn submit-button" %>
+       <%= link_to "Back", "javascript:history.back()", class: "btn statement-button px-4 py-2 back-button" %>
+     </div>
+  <% end %>

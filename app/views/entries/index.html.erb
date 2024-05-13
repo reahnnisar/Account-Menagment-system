@@ -1,0 +1,44 @@
+<div class="bg-image-1">
+  <a href="#" class="to-top d-flex align-items-center justify-content-center"> 
+    <svg width="30px" height="30px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" style="transform: translateX(-1px);" ><path fill="blue" d="M572.235 205.282v600.365a30.118 30.118 0 1 1-60.235 0V205.282L292.382 438.633a28.913 28.913 0 0 1-42.646 0 33.43 33.43 0 0 1 0-45.236l271.058-288.045a28.913 28.913 0 0 1 42.647 0L834.5 393.397a33.43 33.43 0 0 1 0 45.176 28.913 28.913 0 0 1-42.647 0l-219.618-233.23z"/></svg>
+    </a>
+  <div class="content-wrapper">
+      <div class="d-flex align-items-center justify-content-between">
+      <div>
+      <%= link_to "Back", "javascript:history.back()", class: "btn statement-button px-4 py-2 back-button"%>
+      <%= link_to "Home", root_path, class: "btn statement-button px-3 btn home-button" %>
+        </div>
+      <%= link_to "New Entry", new_entry_path, class: "btn new-entry-button" %>
+
+    </div>
+<table class="table table-bordered border-primary">
+        <thead>
+          <tr>
+            <th>Date </th>
+            <th>Description </th>
+            <th>Given </th>
+            <th>Taken </th>
+            <th>Balance </th>
+            <th>Actions </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% cumulative_balance = Entry.sum(:amount) %>
+          <% @entries.each do |entry| %>
+            <tr>
+              <td><%= entry.entry_date %></td>
+              <td><%= entry.description %></td>
+              <td><% if entry.amount < 0 %><%= commas_separated_number entry.amount.abs %><% end %></td>
+              <td><% if entry.amount > 0 %><%= commas_separated_number entry.amount %><% end %></td>
+              <td>
+                <%= commas_separated_number cumulative_balance %>
+                <% cumulative_balance -= entry.amount %>
+              </td>
+              <td>
+                <%= link_to "Edit", edit_entry_path(entry), class: "btn btn-primary" %>
+                <%= link_to "Delte", destroy_entry_path(entry), data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>

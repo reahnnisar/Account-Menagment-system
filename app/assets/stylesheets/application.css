@@ -1,0 +1,98 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+.card{
+  max-width: 300px;
+  box-shadow: -9px 1rem 10px 0px rgba(0, 0, 0, 0.175);
+  border: 3px solid #49505729;
+}
+.w-300{
+  width: 80%;
+}
+.bg-image-1 {
+  background-image: url("image.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.content-wrapper {
+  padding: 20px;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.placeholder-text::placeholder{
+  font-size: 11px;
+}
+.submit-button{
+  background-color: #7750e5;
+
+  border: 1px solid #7750e5;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.submit-button:hover{
+  background-color: #5e36cb;
+  color: #fff;
+}
+.new-entry-button{
+  background-color: #7750e5;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.new-entry-button:hover{
+  background-color: #5e36cb;
+  color: #fff;
+}
+.statement-button{
+  background-color: #fff;
+  border: 1px solid #7750e5;
+  color: #7750e5;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.statement-button:hover{
+  background-color: #5e36cb;
+  color: #fff;
+}
+.border-ts{
+  border: 4px solid #a48aee;
+}
+.border-thead{
+  border-bottom: 3px solid #7750e5;
+}
+.w-95{
+  width: 95%;
+}
+.to-top{
+  width: 45px;
+  height: 45px;
+  background-color: skyblue;
+  color: blue;
+  text-decoration: none;
+  border: 1px solid #000;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
