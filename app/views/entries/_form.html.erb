@@ -34,12 +34,12 @@
           <%= form.label :entry_date, class: "input-group-text fs-6 fw-medium" %>
           <%= form.date_field :entry_date, class: "form-control", value: Date.today.strftime('%Y-%m-%d') %>
        </div>
-    </div>
+    </div> 
          
     <div class="w-100">
-      <div class="input-group mb-3">
-    <%= form.label :description, class:" input-group-text fs-6 fw-medium" %>
-    <%= form.text_field :description,  class:"form-control" %> 
+      <div class="input-group mb-3 position-reletive">
+    <%= form.label :description, class:"input-group-text fs-6 fw-medium" %>
+    <%= form.text_area :description,  class:"form-control buttshb" %> 
     </div>
     </div>
     

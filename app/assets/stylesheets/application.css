@@ -96,3 +96,16 @@
   bottom: 20px;
   right: 20px;
 }
+
+.buttshb{
+  height: 47px;
+  resize: none; 
+}
+
+.buttshb:focus{
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: fit-content;
+  border-radius: 0.5rem !important;
+}

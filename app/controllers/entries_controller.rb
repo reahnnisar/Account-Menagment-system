@@ -1,10 +1,12 @@
 class EntriesController < ApplicationController
+  before_action :require_login
+
   def sum
     @total_sum = Entry.sum(:amount)
   end
 
   def index
-   @entries = Entry.order(entry_date: :desc, created_at: :desc).all
+    @entries = Entry.order(entry_date: :desc, created_at: :desc).all
   end
 
   def show
@@ -21,8 +23,7 @@ class EntriesController < ApplicationController
     @entry.amount = -1 * @entry.amount if params[:direction].downcase == 'out'
 
     if @entry.save
-       
-       redirect_to entries_path
+      redirect_to entries_path
     else
       render :new, status: :unprocessable_entity
     end

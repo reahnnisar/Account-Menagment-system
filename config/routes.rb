@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  root "entries#sum"
+  root to: 'entries#sum'
+  
+  resources :users
   resources :entries, except: [:destroy]
   get '/entries/:id/destroy' => 'entries#destroy', as: :destroy_entry 
+  
+  get "login" => "user_sessions#new", as: :login
+  post "login" => "user_sessions#create"
+  post "logout" => "user_sessions#destroy", as: :logout
 end
