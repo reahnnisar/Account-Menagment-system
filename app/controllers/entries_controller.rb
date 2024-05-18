@@ -51,7 +51,7 @@ class EntriesController < ApplicationController
 
   def destroy
     @entry = Entry.find(params[:id])
-      
+
     @entry.destroy
 
     redirect_to root_path, status: :see_other
@@ -62,6 +62,9 @@ class EntriesController < ApplicationController
   end
 
   private
+  def set_entry
+    @entry = current_user.entries.find(params[:id])
+  end
 
   def entry_params
     params.require(:entry).permit(:entry_date, :amount, :description)
