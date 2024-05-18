@@ -62,9 +62,7 @@ class EntriesController < ApplicationController
   end
 
   private
-  def set_entry
-    @entry = current_user.entries.find(params[:id])
-  end
+   
 
   def entry_params
     params.require(:entry).permit(:entry_date, :amount, :description)
