@@ -15,15 +15,17 @@
   </head>
   <body class="position-relative bg-image-1">
    
-    <div class="bg-transparent position-absolute row text-outline fs-3 fw-bold left-0 right-0 top-0 h-auto vw-100">
+    <div class="bg-transparent position-absolute row text-outline left-0 right-0 top-0 h-auto vw-100">
     <div class="col-2 d-flex align-items-center">
     <% if current_user %>
-      <%= button_to "Logout", :logout, method: :post,  class: "btn btn-danger" %>
+      <%= button_to "Logout", :logout, method: :post,  class: "btn btn-danger px-3 ms-4" %>
     <% else %>
       <%= button_to "Login", :login, class: "btn btn-primary" %>
     <% end %>
     </div>
-    <div class="col-8 d-flex justify-content-center align-items-center text-center"> Account Management System
+    <div class="col-8 d-flex justify-content-center align-items-center text-center fw-bold"> 
+    <h1 class="d-none d-sm-block ms-5">Account Management System</h1>
+      <h5 class="d-sm-none ms-5">Account Management System</h5>
     </div>
     <div class="col-2"></div>
     </div>
