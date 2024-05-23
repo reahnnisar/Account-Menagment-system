@@ -114,3 +114,16 @@
   width: 100%;
   max-width: 400px;
 }
+
+.text-outline{
+  color: white; /* The fill color */
+            text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+}
+
+.mt-10{
+  margin-top: 100px;
+}
