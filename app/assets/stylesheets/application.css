@@ -109,3 +109,8 @@
   height: fit-content;
   border-radius: 0.5rem !important;
 }
+
+.card-custom{
+  width: 100%;
+  max-width: 400px;
+}
