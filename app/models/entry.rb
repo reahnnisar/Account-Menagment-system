@@ -1,4 +1,7 @@
 class Entry < ApplicationRecord
+  belongs_to :user
+
+  validates :user, presence: true
   validates :amount, presence: true
   validates :entry_date, presence: true
 
