@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
-  before_action :require_login
 
+  before_action :require_login
   def sum
     @total_sum = current_user.entries.sum(:amount)
   end

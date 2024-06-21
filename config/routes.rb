@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root to: 'entries#sum'
 
+
   resources :users, except: [:new, :create]
+
   resources :entries, except: [:destroy]
   get '/entries/:id/destroy' => 'entries#destroy', as: :destroy_entry
 

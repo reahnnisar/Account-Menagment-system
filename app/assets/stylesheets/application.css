@@ -109,3 +109,21 @@
   height: fit-content;
   border-radius: 0.5rem !important;
 }
+
+.card-custom{
+  width: 100%;
+  max-width: 400px;
+}
+
+.text-outline{
+  color: white; /* The fill color */
+            text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+}
+
+.mt-10{
+  margin-top: 120px;
+}

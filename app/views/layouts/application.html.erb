@@ -13,13 +13,23 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   
   </head>
-  <body>
+  <body class="position-relative bg-image-1">
+   
+    <div class="bg-transparent position-absolute row text-outline left-0 right-0 top-0 h-auto vw-100">
+    <div class="col-2 d-flex align-items-center">
     <% if current_user %>
-      <%= button_to "Logout", :logout, method: :post %>
+      <%= button_to "Logout", :logout, method: :post,  class: "btn btn-danger px-3 ms-4" %>
     <% else %>
-      <%= button_to "Login", :login %>
+      <%= button_to "Login", :login, class: "btn btn-primary px-3 ms-4" %>
     <% end %>
-    
+    </div>
+    <div class="col-8 d-flex justify-content-center align-items-center text-center fw-bold"> 
+    <h1 class="d-none d-sm-block ms-5">Account Management System</h1>
+      <h5 class="d-sm-none ms-5">Account Management System</h5>
+    </div>
+    <div class="col-2"></div>
+    </div>
+
     <%= yield %>
     
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
