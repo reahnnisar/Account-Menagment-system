@@ -5,7 +5,7 @@ set :application, "Account_Management_System"
 set :repo_url, "https://github.com/reahnnisar/Account-Menagment-system.git"
 
 # Default branch is :master
-# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/Account_Management_System
 set :deploy_to, "/var/www/Account_Management_System"
